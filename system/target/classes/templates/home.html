@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head th:insert="head.html">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div th:insert="navbar.html"></div>
+</div>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-lg-4" th:each="req : ${reqs}">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <span th:if="${req.isHandled() != true}" style="color: red"> Новая </span>
+                        Заявка от
+                        <span th:text="${req.getUserName()}" style="font-weight: bold;"></span>
+                    </h5>
+                    <p class="card-text" th:text = "${req.getCourseName()}">Курс: </p>
+                    <p class="card-text" th:text = "${req.getCommentary()}"></p>
+                    <p class="card-text" th:text = "${req.getPhone()}"></p>
+                    <a th:href="@{'/details/' + ${req.getId()}}">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

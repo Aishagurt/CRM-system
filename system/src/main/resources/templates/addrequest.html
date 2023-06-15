@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head th:insert="head.html">
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="container-fluid">
+  <div th:insert="navbar.html"></div>
+</div>
+
+<div class="container-fluid" style="display: flex;
+  justify-content: center; margin-top: 50px">
+  <div style="width: 1000px;">
+
+<form th:action="@{'/addrequest'}" method="post">
+
+  <div class="row">
+
+    <div class="col-12">
+
+      <label> ФИО: </label>
+
+    </div>
+
+  </div>
+
+  <div class="row mt-2">
+
+    <div class="col-12">
+
+      <input type="text" class="form-control" name="userName">
+
+    </div>
+
+  </div>
+
+  <div class="row mt-3">
+
+    <div class="col-12">
+
+      <label>Название курса: </label>
+
+    </div>
+
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-12">
+      <select class="form-select" name="courseName">
+
+        <option>Java EE</option>
+        <option>Java SE</option>
+        <option>Python Django</option>
+        <option>UX/UI Design</option>
+        <option>Data science</option>
+
+      </select>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+
+    <div class="col-12">
+
+      <label>Комментарий: </label>
+
+    </div>
+
+  </div>
+
+  <div class="row mt-2">
+
+    <div class="col-12">
+
+      <textarea class="form-control" name="commentary" rows="5"></textarea>
+
+    </div>
+
+  </div>
+
+  <div class="row mt-3">
+
+    <div class="col-12">
+
+      <label>Номер телефона: </label>
+
+    </div>
+
+  </div>
+
+  <div class="row mt-2">
+
+    <div class="col-12">
+
+      <input type="text" class="form-control" name="phone">
+    </div>
+
+  </div>
+
+  <div class="row mt-3">
+
+    <div class="col-12">
+
+      <button class="btn btn-success">Добавить заявку</button>
+
+    </div>
+
+  </div>
+
+</form>
+</div>
+</div>
+
+</body>
+</html>
